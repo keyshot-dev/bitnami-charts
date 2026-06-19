@@ -26,6 +26,7 @@ jobs:
         with:
           path: charts
           fetch-depth: 2 # to be able to obtain files changed in the latest commit
+          persist-credentials: false
       - id: get-chart
         name: 'Get modified charts'
         run: |
@@ -73,6 +74,7 @@ jobs:
         with:
           path: charts
           fetch-depth: 2 # to be able to obtain files changed in the latest commit
+          persist-credentials: false
       - id: push-tag
         name: 'Push tag'
         env:
