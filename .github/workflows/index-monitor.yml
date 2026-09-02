@@ -21,6 +21,7 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           ref: 'index'
+          persist-credentials: false
       - name: Check index integrity
         id: integrity-check
         run: |

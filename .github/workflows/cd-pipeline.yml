@@ -26,6 +26,7 @@ jobs:
         with:
           path: charts
           fetch-depth: 2 # to be able to obtain files changed in the latest commit
+          persist-credentials: false
       - id: get-chart
         name: 'Get modified charts'
         run: |
@@ -76,6 +77,7 @@ jobs:
         name: Checkout Repository
         with:
           path: charts
+          persist-credentials: false
       - uses: vmware-labs/vmware-image-builder-action@v0
         name: Publish ${{ needs.get-chart.outputs.chart }}
         with:

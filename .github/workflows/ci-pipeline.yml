@@ -102,6 +102,7 @@ jobs:
           ref: ${{github.event.pull_request.head.ref}}
           repository: ${{github.event.pull_request.head.repo.full_name}}
           path: charts
+          persist-credentials: false
       - id: check-hardcoded-images
         name: Look for hardcoded images
         env:
@@ -184,6 +185,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           path: upstream-charts
+          persist-credentials: false
       - name: Setup git configuration
         run: |
           cd $GITHUB_WORKSPACE/charts
@@ -489,6 +491,7 @@ jobs:
           path: charts-main
           repository: bitnami/charts
           fetch-depth: 1
+          persist-credentials: false
       - name: Install helm
         run: |
           HELM_TARBALL="helm-v3.8.1-linux-amd64.tar.gz"
@@ -564,6 +567,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
+          persist-credentials: false
       - id: log-chart-info
         name: Get chart version and app version
         env:
